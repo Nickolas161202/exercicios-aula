@@ -1,0 +1,47 @@
+{
+  "clientes": [
+    {
+      "nome": "aasd",
+      "email": "aasda",
+      "fone": "45984984",
+      "id": 7
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 8
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 9
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 10
+    },
+    {
+      "nome": "",
+      "email": "",
+      "fone": "",
+      "id": 11
+    },
+    {
+      "nome": "s",
+      "email": "s",
+      "fone": "1818",
+      "id": 12
+    },
+    {
+      "nome": "s",
+      "email": "s",
+      "fone": "1818",
+      "id": 13
+    }
+  ],
+  "produtos": []
+}

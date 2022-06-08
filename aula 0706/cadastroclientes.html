@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            width: 400px;
+            margin: auto;
+            padding: 5px;
+        }
+
+        input {
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <label for="nome">nome</label>
+        <input type="text" id="nome" placeholder="nome do cliente">
+
+        <label for="email">email</label>
+        <input type="email" id="email" placeholder="email do cliente">
+
+        <label for="fone">fone</label>
+        <input type="number" id="fone" placeholder="fone do cliente">
+
+        <div>
+            <button onclick="salvar()">salvar</button>
+            <button onclick="limpar()">cancelar</button>
+        </div>
+    </div>
+    <script>
+        function salvar() {
+
+            const cliente = {
+                nome: "",
+                email: "",
+                fone: ""
+            }
+            cliente.nome = document.getElementById("nome").value
+            cliente.email = document.getElementById("email").value
+            cliente.fone = document.getElementById("fone").value
+            console.log(cliente);
+            const option = {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(cliente)
+            }
+            if (cliente.nome == "") {
+                alert("inisra nome")
+                return
+            }
+            if (cliente.email == "") {
+                alert("inisra email")
+                return
+            }
+            if (cliente.fone == "") {
+                alert("inisra fone")
+                return
+            }
+
+            fetch("http://localhost:3000/clientes", option)
+                .then(data => data.json())
+                .then(cli => console.log(cli))
+
+        }
+        function limpar() {
+            document.getElementById("email").value = ""
+            document.getElementById("nome").value = ""
+            document.getElementById("fone").value = ""
+
+        }
+
+
+    </script>
+</body>
+
+</html>
